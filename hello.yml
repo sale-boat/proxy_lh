@@ -1,0 +1,16 @@
+config:
+  target: 'http://localhost:8080'
+  processor: "./artillery.js"
+  http:
+    pool: 10 # All HTTP requests from all virtual users will be sent over the same 10 connections
+  phases:
+    - duration: 60
+      arrivalRate: 1000
+  defaults:
+    headers:
+      x-my-service-auth: '987401838271002188298567'
+scenarios:
+  - flow:
+    - function: "randomNumber"
+    - get:
+        url: "/{{ randomNum }}"
