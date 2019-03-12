@@ -18,8 +18,14 @@ app.use(compression());
 // app.use('/files', express.static(`${__dirname}/public`));
 
 app.use('/api/reviews', proxy({
-  target: 'http://localhost:3008'
+  target: 'http://ec2-18-209-30-138.compute-1.amazonaws.com'
 }));
+// app.use('/api/related', proxy({
+//   target: 'http://ec2-54-219-186-15.us-west-1.compute.amazonaws.com/9287120'
+// }));
+// app.use('/api/products', proxy({
+//   target: 'http://ec2-3-90-25-170.compute-1.amazonaws.com'
+// }));
 
 app.get('/:id', (req, res) => {
   res.sendFile(`${__dirname}/public/index.html`);
