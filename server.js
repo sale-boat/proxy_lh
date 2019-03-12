@@ -15,7 +15,11 @@ app.use(compression());
 
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
-// app.use('/files', express.static(`${__dirname}/public`));
+app.use('/files', express.static(`${__dirname}/public`));
+
+app.get('/loaderio-58010fb022efc3e49cdd6a779da2e5f4.txt', (req, res) => {
+  res.sendFile(`${__dirname}/public/loaderio-58010fb022efc3e49cdd6a779da2e5f4.txt`);
+})
 
 app.use('/api/reviews', proxy({
   target: 'http://ec2-18-209-30-138.compute-1.amazonaws.com'
