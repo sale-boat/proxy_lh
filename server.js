@@ -17,8 +17,12 @@ app.use(compression());
 
 app.use('/files', express.static(`${__dirname}/public`));
 
-app.get('/loaderio-58010fb022efc3e49cdd6a779da2e5f4.txt', (req, res) => {
-  res.sendFile(`${__dirname}/public/loaderio-58010fb022efc3e49cdd6a779da2e5f4.txt`);
+// app.get('/loaderio-58010fb022efc3e49cdd6a779da2e5f4.txt', (req, res) => {
+//   res.sendFile(`${__dirname}/public/loaderio-58010fb022efc3e49cdd6a779da2e5f4.txt`);
+// })
+
+app.get('/loaderio-536a1e98e837633fb4f654b6a03a6bc8.txt', (req, res) => {
+  res.sendFile(`${__dirname}/public/loaderio-536a1e98e837633fb4f654b6a03a6bc8.txt`);
 })
 
 app.use('/api/reviews', proxy({
